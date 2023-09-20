@@ -1,0 +1,48 @@
+.about {
+  @include flex-column;
+  align-items: center;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  &__description {
+    @include flex-column;
+    align-items: center;
+    margin-top: 16px;
+    gap: 15px;
+    & .menu {
+      width: 80%;
+      & .rotate {
+        @include dropdown-rotate;
+      }
+      & .title {
+        @include dropdown-title;
+      }
+      & .info {
+        @include dropdown-info(100px);
+      }
+      & .equipment {
+        margin-bottom: 3px;
+      }
+    }
+  }
+  @include bp(mobile) {
+    margin-bottom: 100px;
+    &__description {
+      gap: 20px;
+      margin-top: 0;
+      & .menu {
+        & .info {
+          @include dropdown-info(250px);
+        }
+      }
+    }
+  }
+  @include bp(tablet) {
+    &__description {
+      & .menu {
+        & .info {
+          @include dropdown-info(150px);
+        }
+      }
+    }
+  }
+}

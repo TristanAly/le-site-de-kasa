@@ -1,0 +1,51 @@
+header {
+  & .navBar {
+    margin: 0 80px;
+    @include flex-space-between;
+    align-items: center;
+    & img {
+      width: 210.32px;
+      height: 68px;
+    }
+    & ul {
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    & .links {
+      display: flex;
+      gap: 30px;
+      & a {
+        text-decoration: none;
+        font-family: "Montserrat";
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 34px;
+        text-transform: capitalize;
+        color: $primary-color;
+      }
+      .active {
+        text-decoration: underline;
+      }
+    }
+  }
+  @include bp(mobile) {
+    height: 50px;
+    .navBar {
+      margin: 0 30px;
+      gap: 35px;
+
+      & img {
+        width: 145px;
+        height: 46.88px;
+      }
+      & .links {
+        gap: 15px;
+        & a {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

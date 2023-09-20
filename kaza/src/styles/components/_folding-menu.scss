@@ -1,0 +1,30 @@
+.appartement {
+  margin: 20px 80px;
+  &__description {
+    width: 100%;
+    @include flex-space-between;
+    margin-top: 24px;
+    gap: 86px;
+    & .menu {
+      width: 100%;
+      & .rotate {
+        @include dropdown-rotate;
+      }
+      & .title {
+        @include dropdown-title;
+      }
+      & .info {
+        @include dropdown-info(300px);
+      }
+      & .equipment {
+        margin-bottom: 3px;
+      }
+    }
+  }
+  @include bp(mobile) {
+    margin: 30px;
+  }
+  @include bp(tablet) {
+    margin: 40px;
+  }
+}

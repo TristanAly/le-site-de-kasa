@@ -1,0 +1,36 @@
+footer {
+  min-height: 209px;
+  background-color: $black-color;
+  color: $white-color;
+  text-align: center;
+  & img {
+    width: 122px;
+    height: 39.44px;
+    margin-top: 50px;
+    filter: brightness(0) invert(1);
+  }
+  & .copyright {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-family: "Montserrat";
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 34px;
+  }
+  @include bp(mobile) {
+    img {
+      width: 122px;
+      height: 39.44px;
+    }
+    .copyright {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      & p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@mixin dropdown-info($size) {
+  width: 100%;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 25.67px;
+  color: $primary-color;
+  height: $size;
+  background-color: $secondary-color;
+  transition: 0.25s ease-out, padding 0, 02 ease-out;
+  color: rgb(4, 4, 4);
+  padding: 25px 20px;
+}
+
+@mixin dropdown-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  background-color: $primary-color;
+
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+  color: $white-color;
+  padding: 15px 20px;
+  border-radius: 10px;
+  @include bp(mobile) {
+    height: 15px;
+    font-size: 15px;
+  }
+  & img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s ease-in-out;
+  }
+}
+@mixin dropdown-rotate {
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(180deg);
+}
+
+@mixin flex-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin bp($point) {
+  $mobile: "(max-width: 700px)";
+  $tablet: "(min-width: 701px) and (max-width: 900px)";
+  $desktop: "(min-width: 901px) and (max-width: 1280px)";
+
+  @if $point == mobile {
+    @media #{$mobile} {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media #{$tablet} {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media #{$desktop} {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.bannerImg {
+  width: 92%;
+  background-size: cover;
+  background-position: center;
+  // background-image: url(../img/banner-image.png);
+  height: 250px;
+  border-radius: 25px;
+  margin: 50px auto;
+  & .bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.338);
+  }
+  & p {
+    color: $white-color;
+    text-align: center;
+    vertical-align: center;
+    margin: 0;
+    padding: 2em;
+    font-family: "Montserrat";
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 68px;
+  }
+  @include bp(mobile) {
+    height: 150px;
+    p {
+      width: 250px;
+      text-align: start;
+      font-size: 30px;
+      line-height: 1;
+      padding: 50px 20px;
+    }
+  }
+  @include bp(tablet) {
+    p {
+      font-size: 45px;
+      line-height: 1;
+      // padding-bottom: 85px;
+    }
+  }
+}

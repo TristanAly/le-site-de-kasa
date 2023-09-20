@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap");
+
+.Error {
+  background-color: $white-color;
+  color: $primary-color;
+  & .Error-code {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 17em;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    margin: 4rem auto;
+  }
+  & .Error-message {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 26px;
+    margin: 2.5rem auto;
+  }
+  & .Error-back-link {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 2.5rem auto;
+    &.Error-back-link a {
+      color: $primary-color;
+    }
+  }
+  @include bp(mobile) {
+    & .Error-code {
+      font-size: 8em;
+      margin: 100px auto;
+    }
+    & .Error-message {
+      font-size: 1.5rem;
+      margin: 150px auto;
+    }
+    & .Error-back-link {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.location {
+  margin: 0 4% 50px 4%;
+  padding: 4em;
+  background: $secondary-color;
+  border-radius: 25px;
+  & a {
+    text-decoration: none;
+  }
+  & .card_location {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55px;
+    margin: auto;
+
+    // @media (max-width: 900px) {
+    //   grid-template-columns: repeat(2, 1fr);
+    // }
+
+    & .card {
+      @include flex-column;
+      height: 400px;
+      margin: 0 auto;
+      & .card_image {
+        width: 100%;
+        height: 80%;
+      }
+      & img {
+        width: 100%;
+        height: 122%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      & .card_title {
+        height: 70px;
+        background-image: linear-gradient(
+          rgba(128, 128, 128, 0.245),
+          rgba(0, 0, 0, 0.85)
+        );
+        border-radius: 0px 0px 10px 10px;
+
+        & p {
+          color: $white-color;
+          margin: 0px;
+          padding: 10px 20px;
+          font-size: 1.2em;
+          font-weight: 500;
+          line-height: 26px;
+          width: 95%;
+          height: 40px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  @include bp(mobile) {
+    width: 100%;
+    background-color: white;
+    border: none;
+    margin: 50px 0;
+    padding: 0;
+    .card_location {
+      @include flex-column;
+      gap: 30px;
+      & a {
+        width: 100%;
+      }
+      & .card {
+        width: 90%;
+        height: 250px;
+        & img {
+          height: 130%;
+        }
+      }
+    }
+  }
+  @include bp(tablet) {
+    .card_location {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      & .card {
+        height: 250px;
+        & img {
+          height: 130%;
+        }
+        & .card_title {
+          & p {
+            padding-bottom: 8px;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+  @include bp(desktop) {
+    .card_location {
+      gap: 25px;
+      & .card {
+        height: 290px;
+        & img {
+          height: 130%;
+        }
+        & .card_title {
+          & p {
+            padding: 0 15px 30px 15px;
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+  }
+}

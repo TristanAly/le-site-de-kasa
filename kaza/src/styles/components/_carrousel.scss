@@ -1,0 +1,73 @@
+.slide {
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  min-height: 470px;
+  position: relative;
+  & .slider {
+    width: 100%;
+    &__image {
+      width: 100%;
+      height: 415px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    &__number {
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      left: 50%;
+      color: $white-color;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+  }
+  & .arrows {
+    width: 95%;
+    position: absolute;
+    @include flex-space-between;
+    & .leftArrow {
+      left: 10px;
+      cursor: pointer;
+    }
+    & .rightArrow {
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+  @include bp(mobile) {
+    padding: 0;
+    margin: 0;
+    & .arrows {
+      width: 100%;
+      & .leftArrow {
+        & img {
+          height: 50px;
+        }
+      }
+      & .rightArrow {
+        & img {
+          height: 50px;
+        }
+      }
+    }
+  }
+  @include bp(tablet) {
+    padding: 0;
+    margin: 0;
+    & .arrows {
+      width: 97%;
+      & .leftArrow {
+        & img {
+          height: 70px;
+        }
+      }
+      & .rightArrow {
+        & img {
+          height: 70px;
+        }
+      }
+    }
+  }
+}

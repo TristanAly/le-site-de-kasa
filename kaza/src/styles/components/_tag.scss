@@ -1,0 +1,33 @@
+.tags {
+  display: flex;
+  justify-content: flex-start;
+  & .tagline {
+    min-width: 150px;
+    height: 50px;
+    margin: 0 8px;
+    &__button {
+      background: $primary-color;
+      color: $white-color;
+      height: 28px;
+      font-size: 18px;
+      border-radius: 5px;
+      padding: 4px 10px 0 10px;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  @include bp(mobile) {
+    flex-wrap: wrap;
+    & .tagline {
+      &__button {
+        height: 25px;
+        font-size: 15px;
+        padding: 8px 10px 0 10px;
+        margin-top: 20px;
+      }
+    }
+  }
+  @include bp(tablet) {
+    flex-wrap: wrap;
+  }
+}
