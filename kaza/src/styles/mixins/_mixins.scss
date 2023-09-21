@@ -10,6 +10,14 @@
   transition: 0.25s ease-out, padding 0, 02 ease-out;
   color: rgb(4, 4, 4);
   padding: 25px 20px;
+  @include bp(mobile) {
+    font-size: 15px;
+    padding: 10px 20px;
+    line-height: 1;
+    p {
+      margin-top: 4px;
+    }
+  }
 }
 
 @mixin dropdown-title {
