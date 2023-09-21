@@ -1,7 +1,6 @@
 .appartement {
   margin: 20px 80px;
   &__description {
-    // width: 100%;
     @include flex-space-between;
     margin-top: 24px;
     gap: 86px;
@@ -14,7 +13,7 @@
         @include dropdown-title;
       }
       & .info {
-        @include dropdown-info(300px);
+        @include dropdown-info;
       }
       & .equipment {
         margin-bottom: 3px;
@@ -31,7 +30,7 @@
         width: auto;
         max-width: 100%;
         & .info {
-          @include dropdown-info(150px);
+          @include dropdown-info;
         }
       }
     }
@@ -46,7 +45,7 @@
         width: auto;
         max-width: 100%;
         & .info {
-          @include dropdown-info(200px);
+          @include dropdown-info;
         }
       }
     }

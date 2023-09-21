@@ -1,16 +1,20 @@
-@mixin dropdown-info($size) {
+@mixin dropdown-info {
   max-width: 100%;
   font-size: 18px;
   margin: 0;
   font-weight: 400;
   line-height: 25.67px;
   color: $primary-color;
-  height: $size;
+  height: fit-content;
   background-color: $secondary-color;
   border-radius: 5px;
   transition: 0.25s ease-out, padding 0, 02 ease-out;
   color: rgb(4, 4, 4);
   padding: 25px 20px;
+  & p {
+    margin-top: 0px;
+  }
+
   @include bp(mobile) {
     font-size: 15px;
     padding: 10px 20px;
@@ -20,6 +24,14 @@
     }
   }
   @include bp(tablet) {
+    font-size: 17px;
+    padding: 10px 20px;
+    line-height: 1.5;
+    p {
+      margin-top: 10px;
+    }
+  }
+  @include bp(desktop) {
     font-size: 17px;
     padding: 10px 20px;
     line-height: 1.5;
