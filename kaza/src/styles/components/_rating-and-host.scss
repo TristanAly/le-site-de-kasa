@@ -12,10 +12,23 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    & .rating_container {
+      & img {
+        height: 32px;
+        width: 32px;
+      }
+    }
   }
   @include bp(tablet) {
     width: 60%;
     align-items: flex-end;
+    & .rating_container {
+      margin-top: 20px;
+      & img {
+        height: 32px;
+        width: 32px;
+      }
+    }
   }
   @include bp(desktop) {
     width: 60%;

@@ -13,7 +13,7 @@ export const Location = () => {
   const { id } = useParams();
   const [data, setData] = useState(jsonData.find((data) => data.id === id));
 
-  if (setData === undefined) {
+  if (jsonData.find((data) => data.id === id) === undefined) {
     return <Error />;
   }
   return (
