@@ -52,6 +52,11 @@
         }
       }
     }
+    & .slider {
+      &__number {
+        display: none;
+      }
+    }
   }
   @include bp(tablet) {
     padding: 0;

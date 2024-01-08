@@ -14,13 +14,12 @@
     align-items: center;
     & .rating_container {
       & img {
-        height: 32px;
-        width: 32px;
+        height: 30px;
+        width: 30px;
       }
     }
   }
   @include bp(tablet) {
-    width: 60%;
     align-items: flex-end;
     & .rating_container {
       margin-top: 20px;
@@ -31,7 +30,6 @@
     }
   }
   @include bp(desktop) {
-    width: 60%;
     align-items: flex-end;
   }
 }
