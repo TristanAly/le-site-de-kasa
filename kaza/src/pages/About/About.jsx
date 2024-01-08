@@ -1,36 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import bannerImg from "../../assets/banner_2.png";
 import Folding from "../../components/Folding/Folding";
 import Banner from "../../components/Banner/Banner";
+// data fetch
+import getAbout from "../../Service/getAbout.js";
+
 const About = () => {
+  const [jsonData, setJsonData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getAbout();
+        setJsonData(data);
+      } catch (error) {
+        console.error(
+          "Erreur lors de la récupération des données JSON (useEffect) :",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="about">
-      {/* <div className="banner">
-        <img src={bannerImg} alt="Paysages de montagne parcemer de neige" />
-        <div className="bg"></div>
-      </div> */}
       <Banner banImg={bannerImg} title={""} />
       <div className="about__description">
-        <Folding
-          categorie="about"
-          title="Fiabilité"
-          content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."
-        />
-        <Folding
-          categorie="about"
-          title="Respect"
-          content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
-        />
-        <Folding
-          categorie="about"
-          title="Service"
-          content="Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question."
-        />
-        <Folding
-          categorie="about"
-          title="Sécurité"
-          content="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
-        />
+        {jsonData &&
+          jsonData.map((about) => {
+            return (
+              <Folding
+                categorie="about"
+                title={about.title}
+                content={about.content}
+                key={about.id}
+              />
+            );
+          })}
       </div>
     </div>
   );
