@@ -1,19 +1,46 @@
 import { Link, useParams } from "react-router-dom";
-import jsonData from "../../components/data/logements.json";
+// import jsonData from "../../components/data/logements.json";
 import Folding from "../../components/Folding/Folding";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Error from "../Error/Error";
 import Tags from "../../components/Tags/Tags";
 import Ratings from "../../components/Rating/Ratings";
 import Host from "../../components/Host/Host";
 import TitleLocation from "../../components/Logement/TitleLocation";
 import Carrousel from "../../components/Carrousel/Carrousel";
+// data fetch
+import getLocation from "../../Service/getLocation.js";
 
 export const Location = () => {
   const { id } = useParams();
-  const [data, setData] = useState(jsonData.find((data) => data.id === id));
+  const [data, setData] = useState(null);
 
-  if (jsonData.find((data) => data.id === id) === undefined) {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const jsonData = await getLocation();
+
+        const currentData = jsonData.find((item) => item.id === id);
+
+        if (!currentData) {
+          // Gérer le cas où l'ID n'est pas trouvé
+          console.error("ID non trouvé");
+          return;
+        }
+
+        setData(data);
+      } catch (error) {
+        console.error(
+          "Erreur lors de la récupération des données JSON ( useEffect ):",
+          error
+        );
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+  if (!data) {
     return <Error />;
   }
   return (
