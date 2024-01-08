@@ -28,7 +28,7 @@ export const Location = () => {
           return;
         }
 
-        setData(data);
+        setData(currentData);
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des données JSON ( useEffect ):",
