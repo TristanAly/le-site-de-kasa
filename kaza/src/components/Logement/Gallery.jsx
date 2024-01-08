@@ -31,7 +31,10 @@ export const Gallery = () => {
               <Link to={`/location/${location.id}`} key={location.id}>
                 <article className="card">
                   <div className="card_image">
-                    <img src={location.cover} alt="appartement" />
+                    <img
+                      src={location.cover}
+                      alt={location.title + "appartement"}
+                    />
                   </div>
                   <div className="card_title">
                     <p>{location.title}</p>
